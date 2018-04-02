@@ -1,0 +1,98 @@
+body {
+    background: #000;
+}
+
+#landing-header {
+    /*position needs to be something other than absolute in order to use z-index*/
+    position: relative; /*relative : position to its normal position*/
+    /*set z-index to 1 so the heading will appear in front of the background image*/
+    z-index: 1;
+    text-align: center;
+    padding-top: 30vh;
+}
+
+#landing-header h1, #landing-header h3 {
+    color:#fff;
+    text-transform: capitalize;
+}
+
+.slideshow {
+    /*style the entire ul position to occupy the entire body with no margin */
+    position: fixed; /*fixed : position relative to the window*/
+    top:0;
+    left:0;
+    margin: 0;
+    padding:0;
+    z-index:0;
+    /*style the size of entire ul to make it cover the screen*/
+    width: 100%;
+    height: 100%;
+    /*we don't want the bullet point*/
+    list-style: none;
+}
+/*in order to make li cover the entire browzer screen, its parent element ul has to be styled first*/
+
+.slideshow li {
+    position: absolute; /*absolute : position to its first non-static parent*/
+    top: 0;
+    left: 0;
+    margin:0;
+    padding:0;
+    /*size of li (background picture)*/
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    /*set the background image to make it cover the entire browzer*/
+    background-position: 50% 50%; /*center the image*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0; /*want the background image to start fading in*/
+    animation: imageAnimation 50s linear infinite;
+    /*animation property contains: name, duration, time-function, iteration-count, dirction etc*/
+}
+
+/*set the image of each animation element (li)*/
+/*we need to set animation delay otherwise all 5 image will start animating at the same time*/
+.slideshow li:nth-child(1){
+    background-image:url("../image/photo-1444124818704-4d89a495bbae.jpeg");
+}
+
+.slideshow li:nth-child(2){
+    background-image:url("../image/photo-1455763916899-e8b50eca9967.jpeg");
+    animation-delay: 10s;
+}
+
+.slideshow li:nth-child(3){
+    background-image:url("../image/photo-1460899162311-d63278c9cf9d.jpeg");
+    animation-delay: 20s;
+}
+
+.slideshow li:nth-child(4){
+    background-image:url("../image/photo-1501703979959-797917eb21c8.jpeg");
+    animation-delay: 30s;
+}
+
+.slideshow li:nth-child(5){
+    background-image:url("../image/photo-1517824806704-9040b037703b.jpeg");
+    animation-delay: 40s;
+}
+
+@keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    
+    10% {
+        opacity: 1;
+        animation-timing-function: ease-in-out;
+    }
+    
+    20% {
+        opacity: 1;
+    }
+    
+    30% {
+        opacity: 0;
+    }
+}
