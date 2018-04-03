@@ -9,11 +9,24 @@ body {
     z-index: 1;
     text-align: center;
     padding-top: 30vh;
+    text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
 }
 
 #landing-header h1, #landing-header h3 {
     color:#fff;
     text-transform: capitalize;
+    margin:5px;
+}
+
+#landing-header a {
+    margin-top: 10px;
+}
+
+#landingMenu {
+    position:relative;
+    z-index: 1;
+    padding-top: 5vh;
+    left: 85%;
 }
 
 .slideshow {

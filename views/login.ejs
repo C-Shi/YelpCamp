@@ -1,11 +1,23 @@
 <% include ./partials/heading %>
 
-<h1>Login to YelpCamp !!</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="/login" method="POST">
+                <label>Login to YelpCamp</label>
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Username" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="********" class="form-control">
+                </div>
+                <button class="btn btn-primary btn-sm">Login to YelpCamp</button>
+                <p class="inlineDisplay floatRight">Does not have an account? <a href="/register">Sign Up Now</a></p>
+            </form>
+        </div>
+    </div>
+</div>
 
-<form action="/login" method="POST">
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="********">
-    <button>Login to YelpCamp</button>
-</form>
 
 <% include ./partials/footer %>

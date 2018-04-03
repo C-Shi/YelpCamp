@@ -1,0 +1,10 @@
+Upcoming features 
+
+NEXT COMMIT FETURES
+1. LANDING PAGE
+    - style branding textshadow
+    - add two buttom on the upper-right corner 
+        1. About - also create about page
+        2. Login - merge signup into login
+2. FOOTER PARTIALS
+    - add developer infos

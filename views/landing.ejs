@@ -10,6 +10,16 @@
 
 <body>
     
+    <div id="landingMenu">
+        <% if (!currentUser){ %>
+            <a href="/login" class="btn btn-md btn-primary">Login</a>
+        <% }else{ %>
+            <a href="/logout" class="btn btn-md btn-primary">Sign Out</a>
+        <% } %>
+        
+        <a href="/about" class="btn btn-md btn-info">About</a>
+    </div>
+    
     <div id="landing-header">
         <h3>Welcome to YelpCamp </h3>
         <h1>Your camping journey start here</h1>

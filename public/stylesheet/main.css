@@ -9,3 +9,11 @@
 .deleteForm {
     display:inline;
 }
+
+.inlineDisplay {
+    display:inline;
+}
+
+.floatRight {
+    float: right;
+}
