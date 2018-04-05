@@ -1,3 +1,7 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
 .thumbnail{
     padding:0;
 }
@@ -16,4 +20,25 @@
 
 .floatRight {
     float: right;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #f8f8f8;
+    margin-bottom: 0;
+    padding:2px;
+    width: 100%;
+}
+
+.footer a, .footer p {
+    display: inline-block;
+}
+
+.toUpperCase {
+    text-transform: uppercase;
+}
+
+#registerPasswordWarning {
+    display: none;
 }

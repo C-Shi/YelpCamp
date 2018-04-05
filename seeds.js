@@ -39,7 +39,7 @@ function removeAll(){
 }
 
 function addUser(){
-    User.register(User({username:"home"}), "home", function(err){
+    User.register(User({username:"home"}), "password", function(err){
         if(!err){
             passport.authenticate('local');
             console.log("add a user 'home'");

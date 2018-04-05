@@ -8,7 +8,8 @@ var bodyParser     = require("body-parser"),
     User           = require("./models/user"),
     campground     = require("./models/campground"),
     comment        = require("./models/comment"),
-    methodOverride = require("method-override");
+    methodOverride = require("method-override"),
+    seedDB         = require("./seeds");
     
 var campgroundRoute = require("./routes/campground"),
     commentRoute    = require("./routes/comment"),
@@ -17,7 +18,7 @@ var campgroundRoute = require("./routes/campground"),
 var PORT = process.env.PORT || 3000;
 
 var app = express();
-mongoose.connect("mongodb://localhost/app_campground_v13");
+mongoose.connect("mongodb://localhost/app_campground_v14");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -62,3 +63,5 @@ app.use("/",indexRoute);
 app.listen(PORT, function(){
     console.log("Server Started!");
 })
+
+//seedDB();

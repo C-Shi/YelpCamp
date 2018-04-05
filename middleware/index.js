@@ -58,4 +58,12 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next){
     }
 }
 
+middlewareObj.checkPasswordLength = function(req, res, next){
+    if (req.body.password.length >= 6) {
+        return next();
+    }
+    req.flash("error", "Your password is too short. To protect your safety, your password has to be at least 6 characters");
+    res.redirect("/register");
+}
+
 module.exports = middlewareObj;

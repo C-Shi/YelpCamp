@@ -1,10 +1,25 @@
 <% include ./partials/heading %>
 
-<form action="/register" method="POST">
-    <h1>Register</h1>
-    <input type="text" name="username" placeholder="username">
-    <input type="password" name="password" placeholder="password">
-    <button>Register</button>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="/register" method="POST">
+                <h1>Create A New Account</h1>
+                <label>It is, and always will be FREE</label>
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="username" class="form-control">
+                </div>
+                <div class="form-group" id="registerPassword">
+                    <input type="password" name="password" placeholder="password" class="form-control">
+                </div>
+                    <div class="alert alert-warning" id="registerPasswordWarning" role="alert">Password has to be at least 6 character</div>          
+                <div class="form-group">
+                    <button class="btn btn-primary" id="passwordRegisterButton">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <% include ./partials/footer %>

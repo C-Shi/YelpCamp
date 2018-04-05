@@ -2,8 +2,14 @@ var express = require("express");
 var router  = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
+var middlewareObj = require("../middleware");
 
 // expressRoute 是一个可以吧路由组合起来输出到其他文件的插件
+
+//ABOUT routes
+router.get("/about", function(req,res){
+    res.render("about");
+})
 
 // LANDING routes
 router.get("/", function(req,res){
@@ -15,7 +21,7 @@ router.get("/register", function(req, res){
     res.render("register");
 })
 
-router.post("/register", function(req,res){
+router.post("/register", middlewareObj.checkPasswordLength, function(req,res){
     User.register(User({username:req.body.username}), req.body.password, function(err, user){
         if(err){
             req.flash("failure", err.message);

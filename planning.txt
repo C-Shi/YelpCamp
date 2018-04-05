@@ -1,10 +1,10 @@
 Upcoming features 
 
-NEXT COMMIT FETURES
-1. LANDING PAGE
-    - style branding textshadow
-    - add two buttom on the upper-right corner 
-        1. About - also create about page
-        2. Login - merge signup into login
-2. FOOTER PARTIALS
-    - add developer infos
+1. Basic "I'm not a robot" feature
+2. Merge "add a comment" to show page
+3. Display time since post was created with Moment JS 
+4. User profile 
+5. Password reset 
+6. Image upload with multer and cloudinary 
+7. adding google map
+8. Search bar
