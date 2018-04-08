@@ -25,6 +25,8 @@ app.use(express.static("public"));
 
 app.use(flash());
 
+app.locals.moment = require("moment");
+
 // User Authenticate CONFIG - PASSPORT CONFIG -------------------------// 
 app.use(require("express-session")({
     secret: "Do you love me?",
@@ -52,7 +54,6 @@ app.use(function(req, res, next){
     res.locals.error = req.flash("error");
     next();
 });
-
 
 
 // run campgroundRoute when a request make to /campground

@@ -2,7 +2,7 @@ Upcoming features
 
 1. Basic "I'm not a robot" feature   --- done
 2. Merge "add a comment" to show page    ---- done
-3. Display time since post was created with Moment JS 
+3. Display time since post was created with Moment JS --- done
 4. User profile 
 5. Password reset 
 6. Image upload with multer and cloudinary 
