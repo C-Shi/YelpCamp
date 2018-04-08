@@ -15,6 +15,21 @@ var data = [
           price: "22.00",
           description: "Cu probo mucius scribentur mea, et vix propriae antiopam intellegat. Copiosae argumentum his ne. Ne porro malis patrioque eam, vis ut dico percipitur interpretaris, cu bonorum tractatos complectitur cum. No eirmod patrioque referrentur eum, ea labitur bonorum maiorum eam. Ad labore eripuit legendos usu. Suscipit consequuntur definitionem has eu. Id mel congue noluisse tractatos, no duo eirmod gloriatur, his explicari liberavisse ei.",
         },
+        { name: "Horneymoon Lake Camp",
+          image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d9df10d159cc11074d9a7996e8aca442&auto=format&fit=crop&w=1350&q=80",
+          price: "17.00",
+          description: "Cu probo mucius scribentur mea, et vix propriae antiopam intellegat. Copiosae argumentum his ne. Ne porro malis patrioque eam, vis ut dico percipitur interpretaris, cu bonorum tractatos complectitur cum. No eirmod patrioque referrentur eum, ea labitur bonorum maiorum eam. Ad labore eripuit legendos usu. Suscipit consequuntur definitionem has eu. Id mel congue noluisse tractatos, no duo eirmod gloriatur, his explicari liberavisse ei.",
+        },
+        { name: "Mount forever",
+          image: "https://images.unsplash.com/photo-1492648272180-61e45a8d98a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=45fc8a446ad11a120c543c426382119f&auto=format&fit=crop&w=1350&q=80",
+          price: "7.50",
+          description: "Cu probo mucius scribentur mea, et vix propriae antiopam intellegat. Copiosae argumentum his ne. Ne porro malis patrioque eam, vis ut dico percipitur interpretaris, cu bonorum tractatos complectitur cum. No eirmod patrioque referrentur eum, ea labitur bonorum maiorum eam. Ad labore eripuit legendos usu. Suscipit consequuntur definitionem has eu. Id mel congue noluisse tractatos, no duo eirmod gloriatur, his explicari liberavisse ei.",
+        },
+        { name: "Icy Ground Campsite",
+          image: "https://images.unsplash.com/photo-1421885641996-b1f3d004d401?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4e80b57a79b2419faca15c165be3c871&auto=format&fit=crop&w=1371&q=80",
+          price: "24.50",
+          description: "Cu probo mucius scribentur mea, et vix propriae antiopam intellegat. Copiosae argumentum his ne. Ne porro malis patrioque eam, vis ut dico percipitur interpretaris, cu bonorum tractatos complectitur cum. No eirmod patrioque referrentur eum, ea labitur bonorum maiorum eam. Ad labore eripuit legendos usu. Suscipit consequuntur definitionem has eu. Id mel congue noluisse tractatos, no duo eirmod gloriatur, his explicari liberavisse ei.",
+        },
     ];
     
 function seedDB(){

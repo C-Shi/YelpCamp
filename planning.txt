@@ -1,7 +1,7 @@
 Upcoming features 
 
-1. Basic "I'm not a robot" feature
-2. Merge "add a comment" to show page
+1. Basic "I'm not a robot" feature   --- done
+2. Merge "add a comment" to show page    ---- done
 3. Display time since post was created with Moment JS 
 4. User profile 
 5. Password reset 

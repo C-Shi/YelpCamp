@@ -2,6 +2,11 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+textarea {
+    resize: vertical;
+}
+
 .thumbnail{
     padding:0;
 }
@@ -41,4 +46,17 @@ html, body {
 
 #registerPasswordWarning {
     display: none;
+}
+
+#commentSection {
+    margin:5px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: none;
+}
+
+#identifyCode {
+    background-color: transparent;
+    font-size:1.5em;
+    border:0px solid;
 }

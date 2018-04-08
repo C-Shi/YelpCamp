@@ -5,13 +5,26 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <form action="/login" method="POST">
-                <label>Login to YelpCamp</label>
-                <div class="form-group">
-                    <input type="text" name="username" placeholder="Username" class="form-control">
+                <div class="well">
+                    <label>Login to YelpCamp</label>
+                    <div class="form-group">
+                        <input type="text" name="username" placeholder="Username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" placeholder="********" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="form-inline">
+                            <!--'identifyCode' is the randomstring generate to check if a robot is trying to signup-->
+                            <!--'userIdentifyCode' is what user type to verify they are not a robot-->
+                            <!--readonly will disable user to change the code but will submit the value-->
+                            <input id="identifyCode" type="text" value="Enter this code: <%= identifyCode%>" name="identifyCode" readonly="readonly">
+                            <input type="text" name="userIdentifyCode" class="form-control" placeholder="Identification Code">
+                        </div>    
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="password" name="password" placeholder="********" class="form-control">
-                </div>
+                
                 <button class="btn btn-primary btn-sm">Login to YelpCamp</button>
                 <p class="inlineDisplay floatRight">Does not have an account? <a href="/register">Sign Up Now</a></p>
             </form>

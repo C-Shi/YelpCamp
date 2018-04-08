@@ -7,18 +7,18 @@ var middlewareObj = require("../middleware");
 
 // ========== NESTED ROUTES FOR COMMENTS ===============
 
-// NEW routes - display form to make commets
-router.get("/new", middlewareObj.isLogin, function(req,res){
-    //find Campground's id not the req's id
-    campground.findById(req.params.id, function(err, campground){
-        if(err){
-            console.log("No such campground");
-            res.redirect("/campground");
-        }else{
-            res.render("comments/new", {campground:campground});
-        }
-    })
-})
+// // NEW routes - display form to make commets
+// router.get("/new", middlewareObj.isLogin, function(req,res){
+//     //find Campground's id not the req's id
+//     campground.findById(req.params.id, function(err, campground){
+//         if(err){
+//             console.log("No such campground");
+//             res.redirect("/campground");
+//         }else{
+//             res.redirect("comments/show", {campground:campground});
+//         }
+//     })
+// })
 
 // CREATE routes - add new comments to campground
 router.post("/", middlewareObj.isLogin, function(req, res){
@@ -71,8 +71,8 @@ router.put("/:comment_id", middlewareObj.checkCommentOwnership,function(req, res
             req.flash("success", "You updated a comment");
             res.redirect("/campground/" + req.params.id);
         }
-    })
-})
+    });
+});
 
 // Delete comments
 router.delete("/:comment_id/", middlewareObj.checkCommentOwnership,function(req,res){
@@ -83,8 +83,8 @@ router.delete("/:comment_id/", middlewareObj.checkCommentOwnership,function(req,
             req.flash("success", "You deleted a comment");
             res.redirect("back");
         }
-    })
-})
+    });
+});
 // ========== END NESTED ROUTES FOR COMMENTS ===========
 
 module.exports = router;

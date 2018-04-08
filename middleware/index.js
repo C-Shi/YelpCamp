@@ -66,4 +66,13 @@ middlewareObj.checkPasswordLength = function(req, res, next){
     res.redirect("/register");
 }
 
+middlewareObj.checkIdenfityCode = function(req, res, next){
+    // verify if what user type is equals to the random string generate by computer
+    if(req.body.identifyCode === "Enter this code: " + req.body.userIdentifyCode.toUpperCase()){
+        return next();
+    }
+    req.flash("error", "Unable to Verify Idenfication Code");
+    res.redirect("back");
+}
+
 module.exports = middlewareObj;

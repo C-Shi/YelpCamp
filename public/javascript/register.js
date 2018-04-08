@@ -1,6 +1,6 @@
 var registerPasswordWarning = document.getElementById("registerPasswordWarning");
-var registerPassword = document.getElementById("registerPassword");
-var registerPasswordButton = document.getElementById("registerPasswordButton");
+var registerPassword        = document.getElementById("registerPassword");
+var registerPasswordButton  = document.getElementById("registerPasswordButton");
 
 registerPassword.addEventListener("focus", function(){
     registerPasswordWarning.style.display = "block";
@@ -9,3 +9,4 @@ registerPassword.addEventListener("focus", function(){
 registerPasswordButton.addEventListener("click", function(){
     registerPasswordWarning.style.display = "none";
 },true)
+

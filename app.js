@@ -54,6 +54,7 @@ app.use(function(req, res, next){
 });
 
 
+
 // run campgroundRoute when a request make to /campground
 app.use(methodOverride("_method"));
 app.use("/campground",campgroundRoute);

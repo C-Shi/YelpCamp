@@ -13,7 +13,17 @@
                 <div class="form-group" id="registerPassword">
                     <input type="password" name="password" placeholder="password" class="form-control">
                 </div>
-                    <div class="alert alert-warning" id="registerPasswordWarning" role="alert">Password has to be at least 6 character</div>          
+                <div class="alert alert-warning" id="registerPasswordWarning" role="alert">Password has to be at least 6 character</div>
+                <div class="form-group">
+                    <div class="form-inline">
+                        <!--'identifyCode' is the randomstring generate to check if a robot is trying to signup-->
+                        <!--'userIdentifyCode' is what user type to verify they are not a robot-->
+                         <!--readonly will disable user to change the code but will submit the value-->
+                        <input id="identifyCode" type="text" value="Enter this code: <%= identifyCode%>" name="identifyCode" readonly="readonly">
+                        <input type="text" name="userIdentifyCode" class="form-control" placeholder="Identification Code">
+                    </div>    
+                </div>
+                
                 <div class="form-group">
                     <button class="btn btn-primary" id="passwordRegisterButton">Register</button>
                 </div>
@@ -21,5 +31,7 @@
         </div>
     </div>
 </div>
+
+<script src="/javascript/register.js"></script>
 
 <% include ./partials/footer %>

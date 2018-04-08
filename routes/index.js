@@ -3,6 +3,9 @@ var router  = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 var middlewareObj = require("../middleware");
+var randomstring = require("randomstring");
+
+
 
 // expressRoute 是一个可以吧路由组合起来输出到其他文件的插件
 
@@ -17,11 +20,18 @@ router.get("/", function(req,res){
 });
 
 // User Authenticate Routes **************
+// display register form
 router.get("/register", function(req, res){
-    res.render("register");
+    var identifyCode = randomstring.generate({
+        length: 4,
+        charset: 'alphabetic',
+        capitalization: 'uppercase'
+    });
+    
+    res.render("register", {identifyCode:identifyCode});
 })
 
-router.post("/register", middlewareObj.checkPasswordLength, function(req,res){
+router.post("/register", middlewareObj.checkPasswordLength, middlewareObj.checkIdenfityCode, function(req,res){
     User.register(User({username:req.body.username}), req.body.password, function(err, user){
         if(err){
             req.flash("failure", err.message);
@@ -37,10 +47,15 @@ router.post("/register", middlewareObj.checkPasswordLength, function(req,res){
 
 // User Login Routes ********************
 router.get('/login', function(req,res){
-    res.render("login");
+    var identifyCode = randomstring.generate({
+        length: 4,
+        charset: 'alphabetic',
+        capitalization: 'uppercase'
+    });
+    res.render("login", {identifyCode:identifyCode});
 })
 
-router.post("/login", passport.authenticate("local", {
+router.post("/login", middlewareObj.checkIdenfityCode, passport.authenticate("local", {
     successRedirect: "/campground",
     failureRedirect: "/login",
     // successFlash/failureFlash automatically pass key of "success" and "error", not other key

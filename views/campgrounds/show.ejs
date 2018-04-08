@@ -30,14 +30,31 @@
                             <button class="btn btn-danger">Delete</button>
                         </form>
                     <% } %>
-                    
                 </div>
             </div>
             <!-- ----- end of area for campground info display ----- -->
 
             <!--------- comment section --------->
+                <!--to control comment section, if user is not logged in, he is not able to add a comment, instead a reminder message will display-->
             <div class="well">
-                <div class="text-right"><a href="/campground/<%= campground._id%>/comments/new" class="btn btn-success">Add New Comments</a></div>
+                <% if(currentUser){ %>
+                    <div class="text-right"><a class="btn btn-success" id="addCommentButton">Add New Comments</a></div>
+                <% }else{ %>
+                    <div class="alert alert-info" role="alert"><strong>WE LIKE TO KNOW WHO YOU ARE!</strong> Login to Leave A Comment</div>
+                <% } %>
+ 
+                    <!-- *******************THIS IS THE TOGGLE SESSION FOR NEW COMMENTS********************-->
+                        <div id="commentSection" class="well">
+                                <form action="/campground/<%= campground._id %>/comments" method="POST" style="margin: 25px auto">
+                                    <label><i class="fa fa-pencil" aria-hidden="true"></i> Tell us about this campground</label>
+                                    <div class="form-group">
+                                       <textarea name="comment[text]" placeholder="Add a comment to this campground" class="form-control" rows="8"></textarea>
+                                    </div>
+                                    <button class="btn btn-success">Comment &nbsp<i class="fa fa-comment" aria-hidden="true"></i></i></button>
+                                </form>
+                        </div>
+                    <!--****************************THIS IS THE TOGGLE SESSION FOR NEW COMMENTS********************-->
+                    
                 <% campground.comment.forEach(function(comment){ %>
                     <div>
                         <strong><%= comment.author.username%></strong>
@@ -58,6 +75,6 @@
     </div>
 </div>
 
-
+<script src="/javascript/comment.js"></script>
 
 <% include ../partials/footer %>
