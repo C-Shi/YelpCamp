@@ -66,4 +66,4 @@ app.listen(PORT, function(){
     console.log("Server Started!");
 })
 
-//seedDB();
+seedDB();

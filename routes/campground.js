@@ -8,15 +8,25 @@ var middlewareObj = require("../middleware");
 
 
 //Index route - show all basic campground info
-router.get("/", function(req,res){
-        campground.find({},function(err, campgrounds){
-        if(err){
-            console.log(err);
-        }else{
-            res.render("campgrounds/index", {campgrounds:campgrounds});
-        }
-    })
-})
+router.get("/", function (req, res) {
+    var perPage = 8;
+    var pageQuery = parseInt(req.query.page);
+    var pageNumber = pageQuery ? pageQuery : 1;
+    campground.find({}).skip((perPage * pageNumber) - perPage).limit(perPage).exec(function (err, campgrounds) {
+        campground.count().exec(function (err, count) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.render("campgrounds/index", {
+                    campgrounds: campgrounds,
+                    current: pageNumber,
+                    pages: Math.ceil(count / perPage)
+                });
+            }
+        });
+    });
+});
+
 
 //CREATE routes - post request, add new campground to db 
 router.post("/", middlewareObj.isLogin,function(req, res){
